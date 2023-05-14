@@ -1,4 +1,5 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from background import keep_alive
 
 def start_bot(update,context):
     # Your bot will send this message when users first talk to bot 
@@ -33,7 +34,8 @@ def main():
     #SIGINT, SIGTERM or SIGABRT. This should be used most of the      
     # time, since,start_polling() is non-blocking and will stop 
     # the bot
-    updater.idle() 
+    updater.idle()
   
+keep_alive()
 if __name__ == '__main__':
     main()
